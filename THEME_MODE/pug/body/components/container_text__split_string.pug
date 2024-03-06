@@ -1,0 +1,15 @@
+﻿mixin container-text__split-string(text='string',classNameContainer = '',active = true)
+    if active 
+        div(class= 'box__container-text__' + classNameContainer + ' ' + 'active')
+            each chr in text.split('')
+                if chr == ' ' 
+                    div(class="latter",style='visibility: hidden;') X
+                else 
+                    div(class="latter") #{chr}
+    else 
+        div(class= 'box__container-text__' + classNameContainer)
+            each chr in text.split('')
+                if chr == ' ' 
+                    div(class="latter",style='visibility: hidden;') X
+                else 
+                    div(class="latter") #{chr}

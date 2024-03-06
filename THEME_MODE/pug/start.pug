@@ -1,0 +1,14 @@
+﻿include head/head.pug
+include body/body.pug 
+
+mixin start(title = 'Dark Mode', script='script', link_style='style.css')
+    doctype html    
+    html(lang="en")
+        +head-constructor(title,'dist/bundle',link_style)
+        +body-constructor()
+
+
+
+
+
+    

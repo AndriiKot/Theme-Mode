@@ -1,0 +1,44 @@
+﻿@import '../variables/*.styl'
+
+animation_ion(time = 4)
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      box-shadow: 0 0 0 15px var(--color-border);
+      z-index: -1;
+      animation-name line-ion
+      animation-duration time s
+      animation-timing-function ease
+      animation-iteration-count infinite
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      z-index: -1;
+      filter: blur(20px);
+      animation-name line-ion
+      animation-duration time s
+      animation-timing-function ease
+      animation-iteration-count infinite
+    }
+    &:nth-child(2)::after,
+    &:nth-child(2)::before {
+      animation-name line-ion
+      animation-duration time s
+      animation-timing-function ease
+      animation-iteration-count infinite
+    }
+    @keyframes line-ion {
+      from {
+        background: linear-gradient(45deg, var(--color-ion-1) , var(--color-border), var(--color-border), var(--color-ion-1) );
+      }
+      to {
+        background: linear-gradient(-45deg, var(--color-ion-2), var(--color-border), var(--color-border), var(--color-ion-2));
+      }
+    }
+
+  
+    
+    

@@ -1,0 +1,16 @@
+﻿include ./components/container_text__split_string.pug
+include ./components/section_buttons.pug
+
+mixin body-constructor()
+    body(class="light cool")
+        +buttons_section()
+        .box
+            .box_wrapper_container-text
+                +container-text__split-string('Dark Mode','dark',false)
+                +container-text__split-string('Light Mode','light',true)
+            p(class="some-text__lorem-ipsum")
+                    |Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    |Magni impedit sapiente placeat porro voluptate rem, at enim 
+                    |consequuntur maxime deserunt omnis iste recusandae vero vitae 
+                    |ullam aperiam reprehenderit inventore eaque.
+            

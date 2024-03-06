@@ -1,0 +1,69 @@
+﻿@import './animation/*.styl'
+@import './mixins/*.styl'
+@import './variables/*.styl'
+@import './buttons/*.styl'
+@import './section_buttons/*.styl'
+
+body:is(.warm)
+    --color-background #FCEBCC
+    --color-border #523634
+    --color-text #301b28
+    --color-ion-1 #ddc5a2
+    --color-ion-2 #F0D6AB
+
+.dark:is(.warm)
+    --color-background #523634
+    --color-border #301b28
+    --color-text #FCEBCC
+
+body:is(.cool)
+    --color-background #fff;
+    --color-border #3a5199
+    --color-text #000
+    --color-ion-1 #d5d6d2
+    --color-ion-2 #fff
+
+.dark:is(.cool)
+    --color-background #3a5199
+    --color-border #2f2e33
+    --color-text #ffffff
+
+// normalize-css()
+body 
+    body-font()
+    position-center()
+    overflow hidden
+    min-height: 100vh;
+    background-color var(--color-background)
+    color var(--color-text)
+    .box
+        animation_ion()
+    .buttons_section
+        buttons_section(100)
+    &:is(.dark) button:hover
+        color var(--color-text)
+    .btn__switch-mode,
+    .btn__switch-shades_of_color
+        buttons_style()
+    .btn__switch-mode
+        top 3%
+    .btn__switch-shades_of_color
+        top 15%
+    .box
+        position: relative;
+        background-color var(--color-background)
+        width 70%
+        padding 10px 
+    .box__container-text__dark, .box__container-text__light
+        display none
+        font-weight: 700;
+        justify-content center
+        transform-rotateY(360,0.9)
+        animation_transition_delay(10)
+    .box__container-text__dark:is(.active), 
+    .box__container-text__light:is(.active)
+        display flex
+        .latter
+            font-size 3rem;
+    .some-text__lorem-ipsum
+        text-align center

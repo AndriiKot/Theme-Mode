@@ -1,0 +1,10 @@
+﻿node_modules/
+*.html
+*.css
+*.json
+*.styl
+*.pug
+webpack.config.js 
+dist/
+pug/
+styl/

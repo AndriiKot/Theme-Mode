@@ -1,0 +1,20 @@
+﻿@import "../variables/*.styl"
+
+buttons_section(left = 0,top = 0)
+    &
+        position absolute
+        left left + "%"
+        top top + "%"
+        transform: translate(-100%)
+        color: inherit
+        background-color inherit
+        z-index 100
+        border-radius 8px
+        backdrop-filter blur(3px)
+        background-color rgba(255, 255, 255, .1)
+        & :last-of-type
+            margin-bottom 20px
+        
+
+
+
