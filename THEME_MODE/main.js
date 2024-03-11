@@ -37,24 +37,17 @@ const newTextTitle = () => {
 //   );
 // };
 
-// if (localStorage.getItem('theme-mode')) {
-if (body.classList.contains('dark')) {
-  console.log('DARK!');
-}
-if (body.classList.contains('light')) {
-  console.log('Light!!!');
+if (!body.classList.contains(localStorage.getItem('theme-mode'))) {
+  body.classList.toggle('dark');
+  body.classList.toggle('light');
+  newTextTitle();
 }
 
-//   if (localStorage.getItem('theme-mode') === 'dark') {
-//     body.classList.add('dark');
-//     body.classList.remove('light');
-//   }
-// }
+if (!body.classList.contains(localStorage.getItem('shades-mode'))) {
+  body.classList.toggle('cool');
+  body.classList.toggle('warm');
+}
 
-// if (localStorage.getItem("shades-mode")) {
-//   shadesMode();
-//   console.log("Shades mode");
-// }
 
 btnSwitchTheme.addEventListener('click', darkMode);
 btnSwitchTheme.addEventListener('click', newTextTitle);

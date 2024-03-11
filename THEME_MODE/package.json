@@ -16,7 +16,7 @@
     "lint" : "eslint . --fix"
   },
   "keywords": [
-    "open-meteo"
+    "theme-mode"
   ],
   "author": "AndriiKot",
   "license": "ISC",
