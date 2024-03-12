@@ -144,64 +144,96 @@ body .box {
   width: 70%;
   padding: 10px;
 }
-body .box__container-text__dark,
-body .box__container-text__light {
+body .box__container-text__theme-dark,
+body .box__container-text__theme-light,
+body .box__container-text__shades-cool,
+body .box__container-text__shades-warm {
   display: none;
   font-weight: 700;
   justify-content: center;
 }
-body .box__container-text__dark:hover div,
-body .box__container-text__light:hover div {
+body .box__container-text__theme-dark:hover div,
+body .box__container-text__theme-light:hover div,
+body .box__container-text__shades-cool:hover div,
+body .box__container-text__shades-warm:hover div {
   transform: rotateY(360deg);
   transition: 0.9s;
 }
-body .box__container-text__dark:hover div:nth-child(1),
-body .box__container-text__light:hover div:nth-child(1) {
+body .box__container-text__theme-dark:hover div:nth-child(1),
+body .box__container-text__theme-light:hover div:nth-child(1),
+body .box__container-text__shades-cool:hover div:nth-child(1),
+body .box__container-text__shades-warm:hover div:nth-child(1) {
   transition-delay: 0.05s;
 }
-body .box__container-text__dark:hover div:nth-child(2),
-body .box__container-text__light:hover div:nth-child(2) {
+body .box__container-text__theme-dark:hover div:nth-child(2),
+body .box__container-text__theme-light:hover div:nth-child(2),
+body .box__container-text__shades-cool:hover div:nth-child(2),
+body .box__container-text__shades-warm:hover div:nth-child(2) {
   transition-delay: 0.1s;
 }
-body .box__container-text__dark:hover div:nth-child(3),
-body .box__container-text__light:hover div:nth-child(3) {
+body .box__container-text__theme-dark:hover div:nth-child(3),
+body .box__container-text__theme-light:hover div:nth-child(3),
+body .box__container-text__shades-cool:hover div:nth-child(3),
+body .box__container-text__shades-warm:hover div:nth-child(3) {
   transition-delay: 0.15s;
 }
-body .box__container-text__dark:hover div:nth-child(4),
-body .box__container-text__light:hover div:nth-child(4) {
+body .box__container-text__theme-dark:hover div:nth-child(4),
+body .box__container-text__theme-light:hover div:nth-child(4),
+body .box__container-text__shades-cool:hover div:nth-child(4),
+body .box__container-text__shades-warm:hover div:nth-child(4) {
   transition-delay: 0.2s;
 }
-body .box__container-text__dark:hover div:nth-child(5),
-body .box__container-text__light:hover div:nth-child(5) {
+body .box__container-text__theme-dark:hover div:nth-child(5),
+body .box__container-text__theme-light:hover div:nth-child(5),
+body .box__container-text__shades-cool:hover div:nth-child(5),
+body .box__container-text__shades-warm:hover div:nth-child(5) {
   transition-delay: 0.25s;
 }
-body .box__container-text__dark:hover div:nth-child(6),
-body .box__container-text__light:hover div:nth-child(6) {
+body .box__container-text__theme-dark:hover div:nth-child(6),
+body .box__container-text__theme-light:hover div:nth-child(6),
+body .box__container-text__shades-cool:hover div:nth-child(6),
+body .box__container-text__shades-warm:hover div:nth-child(6) {
   transition-delay: 0.3s;
 }
-body .box__container-text__dark:hover div:nth-child(7),
-body .box__container-text__light:hover div:nth-child(7) {
+body .box__container-text__theme-dark:hover div:nth-child(7),
+body .box__container-text__theme-light:hover div:nth-child(7),
+body .box__container-text__shades-cool:hover div:nth-child(7),
+body .box__container-text__shades-warm:hover div:nth-child(7) {
   transition-delay: 0.35s;
 }
-body .box__container-text__dark:hover div:nth-child(8),
-body .box__container-text__light:hover div:nth-child(8) {
+body .box__container-text__theme-dark:hover div:nth-child(8),
+body .box__container-text__theme-light:hover div:nth-child(8),
+body .box__container-text__shades-cool:hover div:nth-child(8),
+body .box__container-text__shades-warm:hover div:nth-child(8) {
   transition-delay: 0.4s;
 }
-body .box__container-text__dark:hover div:nth-child(9),
-body .box__container-text__light:hover div:nth-child(9) {
+body .box__container-text__theme-dark:hover div:nth-child(9),
+body .box__container-text__theme-light:hover div:nth-child(9),
+body .box__container-text__shades-cool:hover div:nth-child(9),
+body .box__container-text__shades-warm:hover div:nth-child(9) {
   transition-delay: 0.45s;
 }
-body .box__container-text__dark:hover div:nth-child(10),
-body .box__container-text__light:hover div:nth-child(10) {
+body .box__container-text__theme-dark:hover div:nth-child(10),
+body .box__container-text__theme-light:hover div:nth-child(10),
+body .box__container-text__shades-cool:hover div:nth-child(10),
+body .box__container-text__shades-warm:hover div:nth-child(10) {
   transition-delay: 0.5s;
 }
-body .box__container-text__dark:is(.active),
-body .box__container-text__light:is(.active) {
+body .box__container-text__theme-dark:is(.active),
+body .box__container-text__theme-light:is(.active) {
   display: flex;
 }
-body .box__container-text__dark:is(.active) .latter,
-body .box__container-text__light:is(.active) .latter {
+body .box__container-text__theme-dark:is(.active) .latter,
+body .box__container-text__theme-light:is(.active) .latter {
   font-size: 3rem;
+}
+body .box__container-text__shades-cool:is(.active),
+body .box__container-text__shades-warm:is(.active) {
+  display: flex;
+}
+body .box__container-text__shades-cool:is(.active) .latter,
+body .box__container-text__shades-warm:is(.active) .latter {
+  font-size: 1.5rem;
 }
 body .some-text__lorem-ipsum {
   text-align: center;

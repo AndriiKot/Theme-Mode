@@ -1,33 +1,40 @@
 import { switchMode } from './js/modeSwitch.js';
 import { localStorageSetElement } from './js/localStorage/setModeLocalStorage.js';
 import { toggleElements } from './js/toggleElements.js';
+import { installStylesLocalStorage } from './js/localStorage/installStylesLocalStorage.js';
 
 const btnSwitchTheme = document.querySelector('.btn__switch-mode');
 const btnSwitchShades = document.querySelector('.btn__switch-shades_of_color');
-const boxes = Array.from(
-  document.querySelector('.box_wrapper_container-text').children
+const bodyClasses = document.body.classList;
+const storageThemeValue = localStorage.getItem('theme-mode');
+const storageShadesValue = localStorage.getItem('shades-mode');
+
+const themesArray = Array.from(
+  document.querySelector('.box_wrapper_container-text__theme').children
 );
 
-const body = document.body;
+const shadesArray = Array.from(
+  document.querySelector('.box_wrapper_container-text__shades').children
+);
 
 const darkLocalStorage = () => {
-  localStorageSetElement(body.classList, 'dark', 'theme-mode', 'light');
+  localStorageSetElement(bodyClasses, 'dark', 'theme-mode', 'light');
 };
 
 const shadesLocalStorage = () => {
-  localStorageSetElement(body.classList, 'cool', 'shades-mode', 'warm');
+  localStorageSetElement(bodyClasses, 'cool', 'shades-mode', 'warm');
 };
 
 const shadesMode = () => {
-  switchMode(body.classList, 'warm', 'cool');
+  switchMode(bodyClasses, 'warm', 'cool');
 };
 
 const darkMode = () => {
-  switchMode(body.classList, 'dark', 'light');
+  switchMode(bodyClasses, 'dark', 'light');
 };
 
-const newTextTitle = () => {
-  toggleElements(null, boxes);
+const newTextTitle = (arr) => () => {
+  toggleElements(null, arr);
 };
 
 // const colorMediaIsDark = () => {
@@ -37,21 +44,22 @@ const newTextTitle = () => {
 //   );
 // };
 
-if (!body.classList.contains(localStorage.getItem('theme-mode'))) {
-  body.classList.toggle('dark');
-  body.classList.toggle('light');
-  newTextTitle();
-}
+installStylesLocalStorage(
+  bodyClasses,
+  'dark',
+  'light',
+  storageThemeValue,
+  newTextTitle(themesArray)
+);
 
-if (!body.classList.contains(localStorage.getItem('shades-mode'))) {
-  body.classList.toggle('cool');
-  body.classList.toggle('warm');
-}
+installStylesLocalStorage(bodyClasses, 'cool', 'warm', storageShadesValue, newTextTitle(shadesArray));
 
+const eventsBtn = (btn, arr = []) => {
+  arr.forEach((element) => {
+    btn.addEventListener('click', element);
+  });
+};
 
-btnSwitchTheme.addEventListener('click', darkMode);
-btnSwitchTheme.addEventListener('click', newTextTitle);
-btnSwitchTheme.addEventListener('click', darkLocalStorage);
+eventsBtn(btnSwitchTheme, [darkMode, newTextTitle(themesArray), darkLocalStorage]);
+eventsBtn(btnSwitchShades, [shadesMode, newTextTitle(shadesArray), shadesLocalStorage]);
 
-btnSwitchShades.addEventListener('click', shadesMode);
-btnSwitchShades.addEventListener('click', shadesLocalStorage);

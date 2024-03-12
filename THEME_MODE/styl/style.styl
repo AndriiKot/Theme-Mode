@@ -54,16 +54,22 @@ body
         background-color var(--color-background)
         width 70%
         padding 10px 
-    .box__container-text__dark, .box__container-text__light
+    .box__container-text__theme-dark, .box__container-text__theme-light,
+    .box__container-text__shades-cool, .box__container-text__shades-warm
         display none
         font-weight: 700;
         justify-content center
         transform-rotateY(360,0.9)
         animation_transition_delay(10)
-    .box__container-text__dark:is(.active), 
-    .box__container-text__light:is(.active)
+    .box__container-text__theme-dark:is(.active), 
+    .box__container-text__theme-light:is(.active)
         display flex
         .latter
             font-size 3rem;
+    .box__container-text__shades-cool:is(.active), 
+    .box__container-text__shades-warm:is(.active)
+        display flex
+        .latter
+            font-size 1.5rem;
     .some-text__lorem-ipsum
         text-align center

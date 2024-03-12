@@ -5,9 +5,12 @@ mixin body-constructor()
     body(class="light cool")
         +buttons_section()
         .box
-            .box_wrapper_container-text
-                +container-text__split-string('Dark Mode','dark',false)
-                +container-text__split-string('Light Mode','light',true)
+            .box_wrapper_container-text__theme
+                +container-text__split-string('Dark Mode','theme-dark',false)
+                +container-text__split-string('Light Mode','theme-light',true)
+            .box_wrapper_container-text__shades
+                +container-text__split-string('Shades Cool Mode','shades-cool',true)
+                +container-text__split-string('Shades Warm Mode','shades-warm',false)
             p(class="some-text__lorem-ipsum")
                     |Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                     |Magni impedit sapiente placeat porro voluptate rem, at enim 
