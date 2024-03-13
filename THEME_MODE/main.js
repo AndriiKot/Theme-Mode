@@ -9,6 +9,18 @@ const bodyClasses = document.body.classList;
 const storageThemeValue = localStorage.getItem('theme-mode');
 const storageShadesValue = localStorage.getItem('shades-mode');
 
+const colorMediaIsDark = () => {
+  return (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
+};
+
+if (colorMediaIsDark) {
+  bodyClasses.remove('light')
+  bodyClasses.add('dark')
+}
+
 const themesArray = Array.from(
   document.querySelector('.box_wrapper_container-text__theme').children
 );
@@ -37,12 +49,6 @@ const newTextTitle = (arr) => () => {
   toggleElements(null, arr);
 };
 
-// const colorMediaIsDark = () => {
-//   return (
-//     window.matchMedia &&
-//     window.matchMedia('(prefers-color-scheme: dark)').matches
-//   );
-// };
 
 installStylesLocalStorage(
   bodyClasses,
@@ -52,7 +58,13 @@ installStylesLocalStorage(
   newTextTitle(themesArray)
 );
 
-installStylesLocalStorage(bodyClasses, 'cool', 'warm', storageShadesValue, newTextTitle(shadesArray));
+installStylesLocalStorage(
+  bodyClasses,
+  'cool',
+  'warm',
+  storageShadesValue,
+  newTextTitle(shadesArray)
+);
 
 const eventsBtn = (btn, arr = []) => {
   arr.forEach((element) => {
@@ -60,6 +72,13 @@ const eventsBtn = (btn, arr = []) => {
   });
 };
 
-eventsBtn(btnSwitchTheme, [darkMode, newTextTitle(themesArray), darkLocalStorage]);
-eventsBtn(btnSwitchShades, [shadesMode, newTextTitle(shadesArray), shadesLocalStorage]);
-
+eventsBtn(btnSwitchTheme, [
+  darkMode,
+  newTextTitle(themesArray),
+  darkLocalStorage,
+]);
+eventsBtn(btnSwitchShades, [
+  shadesMode,
+  newTextTitle(shadesArray),
+  shadesLocalStorage,
+]);
